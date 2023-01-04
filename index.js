@@ -15,6 +15,7 @@ import { handleValidationErrors, checkAuth } from './utils/index.js';
 
 import { UserController, PostController } from './controllers/index.js';
 
+mongoose.set('strictQuery', false)
 mongoose
   .connect(process.env.MONGODB_URI || 'mongodb+srv://admin:admin@cluster0.ielym5z.mongodb.net/blog?retryWrites=true&w=majority')
   .then(() => console.log('DB ok'))
